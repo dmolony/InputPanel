@@ -6,22 +6,30 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+// ---------------------------------------------------------------------------------//
 public class ButtonPanel extends InputPanel
+// ---------------------------------------------------------------------------------//
 {
   private final List<JButton> buttons = new ArrayList<JButton> ();
 
+  // ---------------------------------------------------------------------------------//
   public ButtonPanel (String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     init (options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public ButtonPanel (String title, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     super (title);
     init (options);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void init (String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     JPanel panel = new JPanel ();     // uses FlowLayout
 
@@ -39,17 +47,23 @@ public class ButtonPanel extends InputPanel
     SpringUtilities.makeCompactGrid (this, 1, 1, OFFSET, OFFSET, GAP, GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   public int totalItems ()
+  // ---------------------------------------------------------------------------------//
   {
     return buttons.size ();
   }
 
+  // ---------------------------------------------------------------------------------//
   public JButton getItem (int index)
+  // ---------------------------------------------------------------------------------//
   {
     return buttons.get (index);
   }
 
+  // ---------------------------------------------------------------------------------//
   public JButton getItem (String name)
+  // ---------------------------------------------------------------------------------//
   {
     for (JButton button : buttons)
       if (button.getText ().equals (name))
