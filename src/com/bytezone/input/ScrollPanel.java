@@ -4,7 +4,9 @@ import java.awt.Dimension;
 
 import javax.swing.JScrollPane;
 
+// -----------------------------------------------------------------------------------//
 public class ScrollPanel extends InputPanel
+// -----------------------------------------------------------------------------------//
 {
   JScrollPane sp;
 
@@ -15,12 +17,16 @@ public class ScrollPanel extends InputPanel
   //    SpringUtilities.makeCompactGrid (this, 1, 1, OFFSET, OFFSET, GAP, GAP);
   //  }
 
+  // ---------------------------------------------------------------------------------//
   public ScrollPanel (JScrollPane sp)
+  // ---------------------------------------------------------------------------------//
   {
     this (sp, 200, 120);
   }
 
+  // ---------------------------------------------------------------------------------//
   public ScrollPanel (JScrollPane sp, int width, int height)
+  // ---------------------------------------------------------------------------------//
   {
     this.sp = sp;
     add (sp);

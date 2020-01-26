@@ -39,13 +39,17 @@ import javax.swing.SpringLayout;
  * These utilities are used by several programs, such as
  * SpringBox and SpringCompactGrid.
  */
+// -----------------------------------------------------------------------------------//
 public class SpringUtilities
+// -----------------------------------------------------------------------------------//
 {
   /**
    * A debugging utility that prints to stdout the component's
    * minimum, preferred, and maximum sizes.
    */
+  // ---------------------------------------------------------------------------------//
   public static void printSizes (Component c)
+  // ---------------------------------------------------------------------------------//
   {
     System.out.println ("minimumSize = " + c.getMinimumSize ());
     System.out.println ("preferredSize = " + c.getPreferredSize ());
@@ -88,8 +92,10 @@ public class SpringUtilities
    * @param yPad
    *          y padding between cells
    */
+  // ---------------------------------------------------------------------------------//
   public static void makeGrid (Container parent, int rows, int cols, int initialX,
       int initialY, int xPad, int yPad)
+  // ---------------------------------------------------------------------------------//
   {
     SpringLayout layout;
     try
@@ -168,8 +174,10 @@ public class SpringUtilities
   }
 
   /* Used by makeCompactGrid. */
+  // ---------------------------------------------------------------------------------//
   private static SpringLayout.Constraints getConstraintsForCell (int row, int col,
       Container parent, int cols)
+  // ---------------------------------------------------------------------------------//
   {
     SpringLayout layout = (SpringLayout) parent.getLayout ();
     Component c = parent.getComponent (row * cols + col);
@@ -197,8 +205,10 @@ public class SpringUtilities
    * @param yPad
    *          y padding between cells
    */
+  // ---------------------------------------------------------------------------------//
   public static void makeCompactGrid (Container parent, int rows, int cols, int initialX,
       int initialY, int xPad, int yPad)
+  // ---------------------------------------------------------------------------------//
   {
     SpringLayout layout;
     try

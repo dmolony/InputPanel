@@ -9,11 +9,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
+// -----------------------------------------------------------------------------------//
 public class TextAreaPanel extends InputPanel
+// -----------------------------------------------------------------------------------//
 {
   private final List<JTextArea> textFields = new ArrayList<JTextArea> ();
 
+  // ---------------------------------------------------------------------------------//
   public TextAreaPanel (int rows)
+  // ---------------------------------------------------------------------------------//
   {
     int saveWidth = LABEL_SIZE.width;
     InputPanel.setLabelWidth (0);
@@ -21,18 +25,24 @@ public class TextAreaPanel extends InputPanel
     InputPanel.setLabelWidth (saveWidth);
   }
 
+  // ---------------------------------------------------------------------------------//
   public TextAreaPanel (String[] labels, int rows)
+  // ---------------------------------------------------------------------------------//
   {
     init (labels, rows);
   }
 
+  // ---------------------------------------------------------------------------------//
   public TextAreaPanel (String title, String[] labels, int rows)
+  // ---------------------------------------------------------------------------------//
   {
     super (title);
     init (labels, rows);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void init (String[] labels, int rows)
+  // ---------------------------------------------------------------------------------//
   {
     Font font = new Font ("Monospaced", Font.PLAIN, 12);
 
@@ -52,12 +62,16 @@ public class TextAreaPanel extends InputPanel
     SpringUtilities.makeCompactGrid (this, labels.length, 2, OFFSET, OFFSET, GAP, GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   public JTextArea getItem (int index)
+  // ---------------------------------------------------------------------------------//
   {
     return textFields.get (index);
   }
 
+  // ---------------------------------------------------------------------------------//
   public JTextArea getItem (String label)
+  // ---------------------------------------------------------------------------------//
   {
     for (JTextArea textArea : textFields)
       if (textArea.getName ().equals (label))
