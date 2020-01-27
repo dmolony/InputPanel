@@ -8,7 +8,9 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
 
+// -----------------------------------------------------------------------------------//
 public abstract class InputPanel extends JComponent
+// -----------------------------------------------------------------------------------//
 {
   protected static Dimension LABEL_SIZE = new Dimension (80, 15);
   protected static Dimension BUTTON_SIZE = new Dimension (80, 30);
@@ -16,19 +18,25 @@ public abstract class InputPanel extends JComponent
   protected static int OFFSET = 5;
   protected static int GAP = 5;
 
+  // ---------------------------------------------------------------------------------//
   public InputPanel ()
+  // ---------------------------------------------------------------------------------//
   {
     setLayout (new SpringLayout ());
   }
 
+  // ---------------------------------------------------------------------------------//
   public InputPanel (String title)
+  // ---------------------------------------------------------------------------------//
   {
     this ();
     setBorder (BorderFactory.createTitledBorder (title));
   }
 
   // only call this AFTER the pack() call
+  // ---------------------------------------------------------------------------------//
   public void lock ()
+  // ---------------------------------------------------------------------------------//
   {
     Dimension size = getSize ();
     setMinimumSize (size);
@@ -47,12 +55,16 @@ public abstract class InputPanel extends JComponent
       }
   }
 
+  // ---------------------------------------------------------------------------------//
   protected JLabel setLabel (String labelText)
+  // ---------------------------------------------------------------------------------//
   {
     return setLabel (labelText, JLabel.CENTER);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected JLabel setLabel (String labelText, int alignment)
+  // ---------------------------------------------------------------------------------//
   {
     JLabel label = new JLabel (labelText + " ", JLabel.TRAILING);
     add (label);
@@ -66,27 +78,37 @@ public abstract class InputPanel extends JComponent
     return label;
   }
 
+  // ---------------------------------------------------------------------------------//
   public static void setLabelWidth (int width)
+  // ---------------------------------------------------------------------------------//
   {
     LABEL_SIZE = new Dimension (width, 15);
   }
 
+  // ---------------------------------------------------------------------------------//
   public static void setButtonSize (Dimension dimension)
+  // ---------------------------------------------------------------------------------//
   {
     BUTTON_SIZE = dimension;
   }
 
+  // ---------------------------------------------------------------------------------//
   public static void setTextLength (int length)
+  // ---------------------------------------------------------------------------------//
   {
     TEXT_LENGTH = length;
   }
 
+  // ---------------------------------------------------------------------------------//
   public static void setOffset (int length)
+  // ---------------------------------------------------------------------------------//
   {
     OFFSET = length;
   }
 
+  // ---------------------------------------------------------------------------------//
   public static void setGap (int length)
+  // ---------------------------------------------------------------------------------//
   {
     GAP = length;
   }

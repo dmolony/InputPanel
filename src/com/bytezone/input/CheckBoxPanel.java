@@ -8,33 +8,45 @@ import java.util.List;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 
+// -----------------------------------------------------------------------------------//
 public class CheckBoxPanel extends InputPanel implements Iterable<JCheckBox>
+// -----------------------------------------------------------------------------------//
 {
   private final List<JCheckBox> buttons = new ArrayList<JCheckBox> ();
 
+  // ---------------------------------------------------------------------------------//
   public CheckBoxPanel (String labelText, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     init (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public CheckBoxPanel (String title, String labelText, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     super (title);
     init (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public CheckBoxPanel (String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     initByColumn (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public CheckBoxPanel (String title, String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     super (title);
     initByColumn (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void init (String labelText, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     setLabel (labelText);
 
@@ -49,7 +61,9 @@ public class CheckBoxPanel extends InputPanel implements Iterable<JCheckBox>
         GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void initByRow (String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     for (int i = 0; i < options.length; i++)
     {
@@ -72,7 +86,9 @@ public class CheckBoxPanel extends InputPanel implements Iterable<JCheckBox>
         OFFSET, GAP, GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void initByColumn (String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     for (int j = 0; j < options[0].length; j++)    // rows
     {
@@ -95,7 +111,9 @@ public class CheckBoxPanel extends InputPanel implements Iterable<JCheckBox>
         OFFSET, GAP, GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   public void setSelected (String name)
+  // ---------------------------------------------------------------------------------//
   {
     for (JCheckBox button : buttons)
       if (button.getText ().equals (name))
@@ -105,22 +123,29 @@ public class CheckBoxPanel extends InputPanel implements Iterable<JCheckBox>
       }
   }
 
+  // ---------------------------------------------------------------------------------//
   public JCheckBox getItem (String name)
+  // ---------------------------------------------------------------------------------//
   {
     for (JCheckBox button : buttons)
       if (button.getText ().equals (name))
         return button;
+
     return null;
   }
 
+  // ---------------------------------------------------------------------------------//
   public void addActionListener (ActionListener listener)
+  // ---------------------------------------------------------------------------------//
   {
     for (JCheckBox button : buttons)
       button.addActionListener (listener);
   }
 
+  // ---------------------------------------------------------------------------------//
   @Override
   public Iterator<JCheckBox> iterator ()
+  // ---------------------------------------------------------------------------------//
   {
     return buttons.iterator ();
   }

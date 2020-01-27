@@ -8,24 +8,32 @@ import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
+// -----------------------------------------------------------------------------------//
 public class RadioButtonPanel extends InputPanel
+// -----------------------------------------------------------------------------------//
 {
-  private final List<JRadioButton> buttons = new ArrayList<JRadioButton> ();
+  private final List<JRadioButton> buttons = new ArrayList<> ();
   private final ButtonGroup buttonGroup = new ButtonGroup ();
   private final JRadioButton hiddenButton = new JRadioButton ();
 
+  // ---------------------------------------------------------------------------------//
   public RadioButtonPanel (String labelText, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     init (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public RadioButtonPanel (String title, String labelText, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     super (title);
     init (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public RadioButtonPanel (String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     int saveWidth = LABEL_SIZE.width;
     InputPanel.setLabelWidth (0);
@@ -33,18 +41,24 @@ public class RadioButtonPanel extends InputPanel
     InputPanel.setLabelWidth (saveWidth);
   }
 
+  // ---------------------------------------------------------------------------------//
   public RadioButtonPanel (String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     initByColumn (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   public RadioButtonPanel (String title, String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     super (title);
     initByColumn (labelText, options);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void init (String labelText, String[] options)
+  // ---------------------------------------------------------------------------------//
   {
     buttonGroup.add (hiddenButton);
 
@@ -62,7 +76,9 @@ public class RadioButtonPanel extends InputPanel
         GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void initByRow (String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     buttonGroup.add (hiddenButton);
 
@@ -89,7 +105,9 @@ public class RadioButtonPanel extends InputPanel
         OFFSET, GAP, GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   protected void initByColumn (String labelText, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     buttonGroup.add (hiddenButton);
 
@@ -116,7 +134,9 @@ public class RadioButtonPanel extends InputPanel
         OFFSET, GAP, GAP);
   }
 
+  // ---------------------------------------------------------------------------------//
   private void addButton (int i, int j, String[][] options)
+  // ---------------------------------------------------------------------------------//
   {
     if (j < options[i].length)
     {
@@ -129,25 +149,34 @@ public class RadioButtonPanel extends InputPanel
       add (new JLabel (""));
   }
 
+  // ---------------------------------------------------------------------------------//
   public void deselectAll ()
+  // ---------------------------------------------------------------------------------//
   {
     hiddenButton.setSelected (true);
   }
 
+  // ---------------------------------------------------------------------------------//
   public JRadioButton getIndex (int index)
+  // ---------------------------------------------------------------------------------//
   {
     return buttons.get (index);
   }
 
+  // ---------------------------------------------------------------------------------//
   public JRadioButton getItem (String name)
+  // ---------------------------------------------------------------------------------//
   {
     for (JRadioButton button : buttons)
       if (button.getText ().equals (name))
         return button;
+
     return null;
   }
 
+  // ---------------------------------------------------------------------------------//
   public String getSelectedText ()
+  // ---------------------------------------------------------------------------------//
   {
     for (JRadioButton button : buttons)
       if (button.isSelected ())
@@ -156,7 +185,9 @@ public class RadioButtonPanel extends InputPanel
     return "";
   }
 
+  // ---------------------------------------------------------------------------------//
   public void setSelected (String name)
+  // ---------------------------------------------------------------------------------//
   {
     for (JRadioButton button : buttons)
       if (button.getText ().equals (name))
@@ -166,7 +197,9 @@ public class RadioButtonPanel extends InputPanel
       }
   }
 
+  // ---------------------------------------------------------------------------------//
   public void addActionListener (ActionListener listener)
+  // ---------------------------------------------------------------------------------//
   {
     for (JRadioButton button : buttons)
       button.addActionListener (listener);

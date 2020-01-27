@@ -8,9 +8,13 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+// -----------------------------------------------------------------------------------//
 class InputTester extends JFrame
+// -----------------------------------------------------------------------------------//
 {
+  // ---------------------------------------------------------------------------------//
   public InputTester ()
+  // ---------------------------------------------------------------------------------//
   {
     super ("Create NATUNLD file");
 
@@ -77,7 +81,9 @@ class InputTester extends JFrame
     transferPanel.getItem ("Destination file").setText ("PEEK-006.SRC");
   }
 
+  // ---------------------------------------------------------------------------------//
   public static void main (String[] args)
+  // ---------------------------------------------------------------------------------//
   {
     new InputTester ().setVisible (true);
   }
