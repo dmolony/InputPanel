@@ -40,11 +40,11 @@ class InputTester extends JFrame
     TextPanel transferPanel = new TextPanel ("File Transfer", fileNames2);
     ButtonPanel buttonPanel = new ButtonPanel (buttons);
 
-    List<InputPanel> windowPanel = new ArrayList<InputPanel> ();
+    List<InputPanel> windowPanel = new ArrayList<> ();
     windowPanel.add (connectPanel);
     windowPanel.add (compilePanel);
 
-    List<InputPanel> natunldPanel = new ArrayList<InputPanel> ();
+    List<InputPanel> natunldPanel = new ArrayList<> ();
     natunldPanel.add (commandPanel);
     natunldPanel.add (modulePanel);
     natunldPanel.add (codePanel);
@@ -55,6 +55,8 @@ class InputTester extends JFrame
     windowPanel.add (buttonPanel);
 
     add (new ColumnPanel (windowPanel));
+
+    //    this.setPreferredSize (new Dimension (100, 100));
 
     pack ();
     setLocationRelativeTo (null);
