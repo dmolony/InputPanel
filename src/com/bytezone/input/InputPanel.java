@@ -44,8 +44,8 @@ public abstract class InputPanel extends JComponent
     setMaximumSize (size);
 
     for (Component c : getComponents ())
-      if (c instanceof InputPanel)
-        ((InputPanel) c).lock ();
+      if (c instanceof InputPanel ip)
+        ip.lock ();
       else
       {
         size = c.getSize ();
@@ -73,7 +73,7 @@ public abstract class InputPanel extends JComponent
     label.setPreferredSize (LABEL_SIZE);
     label.setMaximumSize (LABEL_SIZE);
     label.setVerticalAlignment (alignment);
-    //    label.setBorder (BorderFactory.createLineBorder (Color.black));
+    // label.setBorder (BorderFactory.createLineBorder (Color.black));
 
     return label;
   }
